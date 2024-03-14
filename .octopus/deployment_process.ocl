@@ -1,0 +1,17 @@
+step "script-test" {
+    name = "script test"
+    properties = {
+        Octopus.Action.TargetRoles = "aws"
+    }
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Script.ScriptBody = "write-host \"hello jp\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool_variable = ""
+    }
+}
